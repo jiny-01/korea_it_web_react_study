@@ -14,8 +14,8 @@ function App() {
     {/* <BasicJsx /> */}
     {/* 이렇게 하면 BasicJsx.jsx 에 있는 jsx1 이 나올 것 */}
     {/* <BasicProps /> */}
-    {/* <CountState /> */}
-    <Calculator />
+    <CountState />
+    {/* <Calculator /> */}
     </>
   )
 }
