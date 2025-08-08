@@ -11,17 +11,66 @@ function Calculator() {
     // console.log(e.target.value);
     // setInput(input + clickedValue);
 
+    //처음 입력할 때 연산자 입력 막기
+    //연산자 연달아 입력 막기
+
+    if (input === "+" || input === "-" || input === "=") {
+      return;
+    }
+
+    if (input === "0") {
+        if (clickedValue === "+" || clickedValue === "-")
+      setInput(clickedValue);
+    } else {
+      setInput(input + clickedValue);
+    }
+
+    //처음 입력 시 연산자 입력 막기
+    const operator = ["+", "-", "="];
+    const isOperator = (value) => operator.includes(value);
+
+    console.log("clickedValue:", clickedValue);
+    console.log("input:", input);
+    if (isOperator(clickedValue) && (input === "" || input === "0")) {
+      console.log("연산자 첫 입력 불가능");
+      return;
+    }
+
+    
     //연산자 뒤에 0_ 오는 거 막기 위한 로직
     const lastChar = input.charAt(input.length - 1);
     if ((lastChar === "+" || lastChar === "-") && clickedValue === "0") {
-        return;
+      return;
+    }
+
+    //연산자 연달아 입력 방지
+    const last = input.length > 0 ? input[input.length - 1] : null;
+    // const last = input[input.length - 1];
+    if (isOperator(clickedValue) && isOperator(last)) {
+      return;
+    }
+
+    //연산자 연달아 입력 방지
+    // if((lastChar === "+" || lastChar === "-") && (clickedValue === "+" || clickedValue === "-")) {
+    //     return;
+    // }
+
+    //숫자 하나씩 지우기
+    if (clickedValue === "remove") {
+      const newInput = input.slice(0, -1);
+      setInput(newInput);
+
+      return;
     }
 
     //= 눌렀을 땐 결과만 eval 로 보여주고 끝
     if (clickedValue === "=") {
       setResult(eval(input));
+      setInput("0");
       return;
     }
+
+    //리셋 버튼 눌러서 초기화
 
     if (input === "0") {
       setInput(clickedValue);
@@ -36,6 +85,9 @@ function Calculator() {
       <div>
         <button onClick={onClickHandler} value={0}>
           0
+        </button>
+        <button onClick={onClickHandler} value={"remove"}>
+          ←
         </button>
       </div>
       <div>
