@@ -63,3 +63,5 @@ function UserProfile() {
 
 //만약 에러 -> 유저 있는지 확인 -> 있으면 user 정보, 없으면 데이터 없음
 export default UserProfile;
+
+
