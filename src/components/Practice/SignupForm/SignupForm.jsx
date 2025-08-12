@@ -12,7 +12,14 @@ function SignupForm() {
 
 
   return (
-    <div>SignupForm</div>
+    <div>
+        <div>
+            <input type="email" />
+        </div>
+        <div>
+            <input type="password" />
+        </div>
+    </div>
   )
 }
 
