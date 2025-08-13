@@ -65,3 +65,43 @@ function UserProfile() {
 export default UserProfile;
 
 
+// const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setInput((prev) => ({ ...prev, [name]: value }));
+//   };
+
+/* <input
+          type="email"
+          name="email"
+          value={input.email}
+          onChange={handleChange}
+        />
+        {error.email && <p style={{ color: "red" }}>{error.email}</p>}
+      </div>
+
+      <div>
+        <label>Password:</label>
+        <input
+          type="password"
+          name="password"
+          value={input.password}
+          onChange={handleChange}
+        />
+        {error.password && <p style={{ color: "red" }}>{error.password}</p>}
+      </div>
+
+      <button type="submit" disabled={isDisabled}>
+        가입하기
+      </button> */
+
+    //   // 이메일 검사: '@' 포함 여부
+    // if (input.email && !input.email.includes("@")) {
+    //   emailError = "이메일 형태에 맞게 입력해주세요.";
+    // }
+
+    // // 비밀번호 검사: 길이 8자 이상
+    // if (input.password && input.password.length < 8) {
+    //   passwordError = "비밀번호는 8자 이상이어야 합니다.";
+    // }
+
+    // setError({ email: emailError, password: passwordError });
