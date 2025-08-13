@@ -12,6 +12,7 @@ import InputState4 from './components/BasicState/InputState4/InputState4'
 import DomRef from './components/DomRef/DomRef'
 import Effect1 from './components/Effect/Effect1/Effect1'
 import Effect2 from './components/Effect2/Effect2'
+import Emotion1 from './components/Emotion/Emotion1/Emotion1'
 import LifeCycle from './components/LifeCycle/LifeCycle'
 import LifeCycleApp from './components/LifeCycle/LifeCycleApp'
 import Render from './components/LifeCycle/Render'
@@ -41,7 +42,8 @@ function App() {
     {/* <Effect2 /> */}
     {/* <FruitsFilter /> */}
     {/* <UserProfile /> */}
-    <SignupForm />
+    {/* <SignupForm /> */}
+    <Emotion1 />
 
     </>
   )

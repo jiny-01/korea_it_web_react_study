@@ -84,7 +84,7 @@ function SignupForm() {
           />
           {/* {error.email ? <p>{error.email}</p> : <></>} */}
           {error.email && <p>{error.emali}</p>}
-          {/* !!: 값을 명시적으로 boolean 값으로 변환 */}
+          {/* setError 를 했기 때문에 여기선 그냥 error 쓰면 됨 */}
         </div>
         <div>
           <input
