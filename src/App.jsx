@@ -43,8 +43,8 @@ function App() {
     {/* <FruitsFilter /> */}
     {/* <UserProfile /> */}
     {/* <SignupForm /> */}
-    <Emotion1 />
-
+    {/* <Emotion1 /> */}
+    <Index />
     </>
   )
 }
