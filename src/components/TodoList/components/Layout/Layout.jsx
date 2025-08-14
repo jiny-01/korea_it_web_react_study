@@ -1,12 +1,15 @@
-import React from "react";
-
+/** @jsxImportSource @emotion/react */
 import Header from "../Header/Header";
 import * as s from "./styles";
 
 function Layout() {
-  return <div>
-    <div css={s.Layout}></div>
-  </div>;
+	return (
+		<div css={s.layout}>
+      <div css={s.container}>
+        <Header />
+      </div>
+		</div>
+	);
 }
 
 export default Layout;

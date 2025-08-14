@@ -1,5 +1,5 @@
 
-import './App.css'
+// import './App.css'
 import BasicJsx from './components/BasicJsx/BasicJsx'
 import BasicProps from './components/BasicProps/BasicProps'
 import BasicReact from './components/BasicReact/BasicReact'
@@ -19,6 +19,8 @@ import Render from './components/LifeCycle/Render'
 import FruitsFilter from './components/Practice/FruitsFilter/FruitsFilter'
 import SignupForm from './components/Practice/SignupForm/SignupForm'
 import UserProfile from './components/Practice/UserProfile/UserProfile'
+import Index from './components/TodoList'
+import Header from './components/TodoList/components/Header/Header'
 
 function App() {
 
