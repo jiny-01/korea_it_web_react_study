@@ -44,37 +44,76 @@ function Main({ todoList, setTodoList }) {
     setInputValue("");
   };
 
+
+  const checkBoxOnChangeHandler = (e) => {
+		const todoId = parseInt(e.target.value);
+
+		setTodoList((prev) =>
+			prev.map((todo) => {
+				if (todo.id === todoId) {
+					return {
+						...todo,
+						isComplete: !todo.isComplete,
+					};
+				}
+				return todo;
+			})
+		);
+	};
+  
+  const deleteOnClickHandler = (todoId) => {
+    console.log("삭제 클릭됨:", todoId);
+    //해당 아이디 삭제-setTodoList 활용
+    //set 이전 상태 가져와서 필터걸어줌
+    //-요소 하나하나 todo 가져옴 , 
+    //todo.id 가 내가 가져온 todoId 랑 다른 애들만 가져옴(같은 애 빼고 = 삭제)
+    //조건 todo.id !== todoId → 삭제하고 싶은 아이디와 다른 것만 남기기
+    setTodoList((prev) => prev.filter((todo) => todo.id !== todoId ))
+
+  }
+
   return (
-    <div css={s.Container}>
-      <div css={s.listContainer}>
-        <ul>
-          {todoList.map((todo) => (
-            <li key={todo.id}>
-              <input type="checkbox" id={`todo${todo.id}`} />
-              <label htmlFor={`todo${todo.id}`}></label>
-              <label htmlFor={`todo${todo.id}`}>
-                {todo.content}
-              </label>
-              
-              <div css={s.hiddenTrashBox}>
-                <div css={s.trashBox}>
-                  <IoTrash />
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div css={s.todoInputContainer}>
-        <input
-          type="text"
-          placeholder="할 일을 입력하세요"
-          onChange={inputOnChangeHandler}
-          onKeyDown={onKeyDownHandler}
-        />
-      </div>
-    </div>
-  );
+		<div css={s.container}>
+			<div css={s.listContainer}>
+				<ul>
+					{todoList.map((todo) => (
+						<li key={todo.id}>
+							<input
+								type="checkbox"
+								id={`todo${todo.id}`}
+								value={todo.id}
+								checked={todo.isComplete}
+								onChange={checkBoxOnChangeHandler}
+							/>
+							<label htmlFor={`todo${todo.id}`}></label>
+							<label htmlFor={`todo${todo.id}`}>
+								{todo.content}
+							</label>
+							<div css={s.hiddenTrashBox}>
+								<div
+									css={s.trashBox}
+									onClick={() =>
+										deleteOnClickHandler(todo.id)
+									}
+								>
+									<IoTrash />
+								</div>
+							</div>
+						</li>
+					))}
+				</ul>
+			</div>
+			<div css={s.todoInputContainer}>
+				<input
+					type="text"
+					placeholder="할 일을 입력하세요"
+					value={inputValue}
+					onChange={inputOnChangeHandler}
+					onKeyDown={onKeyDownHandler}
+				/>
+			</div>
+		</div>
+	);
 }
 
 export default Main;
