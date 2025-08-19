@@ -24,6 +24,7 @@ import Router1 from "./Router_study/Router1/Router1";
 import { BrowserRouter } from "react-router-dom";
 import Router2 from "./Router_study/Router2/Router2";
 import Router3 from "./Router_study/Router3/Router3";
+import Router4 from "./Router_study/Router4/Router4";
 
 function App() {
   return (
@@ -51,7 +52,8 @@ function App() {
       {/* <Index /> */}
       {/* <Router1 /> */}
       {/* <Router2 /> */}
-      <Router3 />
+      {/* <Router3 /> */}
+      <Router4 />
     </BrowserRouter>
     /**
      * BrowserRouter 로 감싸진 내부에 있는 컴포넌트들만 Routes, Route, Link, useNavigation 같은 

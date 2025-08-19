@@ -44,6 +44,10 @@ function Router3() {
         console.log("쿼리 파라미터 변경됨")
         console.log("location search =>", decodeURI(location.search))   //한글 깨지는 거 방지 decode
     }, [location.search])
+
+    const backBtnHandler = () => {
+        navigate(-1)          //바로 이전 페이지로 감
+    }
   return (
     <div>
         <Link to={"/location/1"}>location1</Link>
@@ -51,6 +55,7 @@ function Router3() {
         <Link to={"/location/3"}>location3-1</Link>
         <Link to={"/location/3?name=이동윤"}>location3-2</Link>
         <Link to={"/location/3?name=삼동윤"}>location3-3</Link>
+        <button onClick={backBtnHandler}>뒤로 가기</button>
         <Routes>
             <Route path="/location/1" element={<h1>location1</h1>}/>
             <Route path="/location/2" element={<h1>location2</h1>}/>
