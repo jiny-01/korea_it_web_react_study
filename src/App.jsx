@@ -20,10 +20,14 @@ import SignupForm from "./components/Practice/SignupForm/SignupForm";
 import UserProfile from "./components/Practice/UserProfile/UserProfile";
 import Index from "./components/TodoList/pages/Index";
 import Header from "./components/TodoList/components/Header/Header";
+import Router1 from "./Router_study/Router1/Router1";
+import { BrowserRouter } from "react-router-dom";
+import Router2 from "./Router_study/Router2/Router2";
+import Router3 from "./Router_study/Router3/Router3";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       {/* <BasicReact /> */}
       {/* <BasicJsx /> */}
       {/* 이렇게 하면 BasicJsx.jsx 에 있는 jsx1 이 나올 것 */}
@@ -44,8 +48,15 @@ function App() {
       {/* <UserProfile /> */}
       {/* <SignupForm /> */}
       {/* <Emotion1 /> */}
-      <Index />
-    </>
+      {/* <Index /> */}
+      {/* <Router1 /> */}
+      {/* <Router2 /> */}
+      <Router3 />
+    </BrowserRouter>
+    /**
+     * BrowserRouter 로 감싸진 내부에 있는 컴포넌트들만 Routes, Route, Link, useNavigation 같은 
+     * 라우터 기능을 사용할 수 있다. 
+     */
   );
 }
 
